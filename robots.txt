@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# Add your sitemap when ready:
+# Sitemap: https://aureolin.net/sitemap.xml
