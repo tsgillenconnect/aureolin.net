@@ -1,314 +1,182 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QBWBK5X2MB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QBWBK5X2MB');
-</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> tsgillenconnect — Modern Starter Website</title>
-  <meta name="description" content="A clean, responsive starter website template you can customize and publish fast." />
-  <meta property="og:title" content="Modern Starter Website" />
-  <meta property="og:description" content="A clean, responsive starter website template you can customize and publish fast." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#111827" />
+
+  <title>Aureolin — Golden Yellow Design & Brand Studio</title>
+  <link rel="canonical" href="https://aureolin.net/">
+  <meta name="description" content="Aureolin is a luminous golden yellow. Explore its meaning, psychology, and how to use it in branding and design.">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#FDEE00">
+
+  <!-- === Social preview meta (Open Graph + Twitter) === -->
+  <meta property="og:site_name" content="Aureolin">
+  <meta property="og:title" content="Aureolin — Golden Yellow Design & Brand Studio">
+  <meta property="og:description" content="Meaning, psychology, and uses of golden yellow in branding.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aureolin.net/">
+  <meta property="og:image" content="https://aureolin.net/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aureolin — golden yellow wordmark on deep navy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aureolin — Golden Yellow Design & Brand Studio">
+  <meta name="twitter:description" content="Meaning, psychology, and uses of golden yellow in branding.">
+  <meta name="twitter:image" content="https://aureolin.net/og-image.jpg">
+  <meta name="twitter:image:alt" content="Aureolin — golden yellow wordmark on deep navy">
+  <!-- === /Social preview meta === -->
+
+  <!-- Google Analytics 4 (unchanged) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBWBK5X2MB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QBWBK5X2MB');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg: #0b0f14;
-      --card: #0f141b;
-      --muted: #9aa4b2;
-      --text: #e5e7eb;
-      --brand: #7c3aed; /* purple */
-      --brand-2: #22d3ee; /* cyan */
-      --ring: rgba(124, 58, 237, 0.35);
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.25), rgba(124,58,237,0) 40%),
-                  radial-gradient(900px 500px at 90% -20%, rgba(34,211,238,.2), rgba(34,211,238,0) 45%),
-                  var(--bg);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, 92vw); margin-inline: auto; }
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,15,20,0.6);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-    .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.2px; }
-    .logo-badge { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display: grid; place-items: center; font-weight: 900; }
-    .nav-links { display: flex; gap: 20px; align-items: center; }
-    .nav a { color: var(--muted); font-weight: 600; font-size: 14px; opacity: .95; }
-    .cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); transition: .2s transform; }
-    .cta:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(124,58,237,.18); }
-    .hero { padding: 72px 0 36px; text-align: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; color: #c7d2fe; background: rgba(124,58,237,.12); border: 1px solid rgba(124,58,237,.35); font-size: 12px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; }
-    .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.08; margin: 18px 0 10px; letter-spacing: -0.02em; }
-    .hero p { color: var(--muted); font-size: clamp(14px, 2.5vw, 18px); margin: 0 auto; max-width: 760px; }
-    .hero-actions { display: flex; gap: 12px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
-    .btn {
-      padding: 12px 18px; border-radius: 12px; border: 0; cursor: pointer; font-weight: 700; letter-spacing: .2px;
-    }
-    .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; box-shadow: 0 10px 30px rgba(124,58,237,.32); }
-    .btn-secondary { background: #111827; color: var(--text); border: 1px solid rgba(255,255,255,.12); }
-    .marquee { margin-top: 28px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-    .marquee-track { display: flex; gap: 36px; animation: scroll 28s linear infinite; white-space: nowrap; color: #cbd5e1; opacity: .8; }
-    .marquee img { height: 22px; opacity: .9; filter: grayscale(1) contrast(1.1) brightness(.9); }
-    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    :root{ --aureolin:#FDEE00; --navy:#0B0F14; --royal:#1B4AFF; --cream:#F6F2E6; --muted:#C8C8C8; --maxw:1100px; }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#fff;background:var(--navy);line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
 
-    .section { padding: 72px 0; }
-    .grid { display: grid; gap: 18px; grid-template-columns: repeat(12, 1fr); }
-    .card { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 20px; }
-    .feature { grid-column: span 4; min-height: 180px; }
-    .feature h3 { margin: 8px 0 6px; }
-    .muted { color: var(--muted); }
+    .nav{position:fixed;inset:0 0 auto 0;height:64px;z-index:50;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .nav .bar{pointer-events:auto;width:min(100%,var(--maxw));display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 20px;
+      backdrop-filter:saturate(140%) blur(8px);background:color-mix(in oklab,#000 55%,transparent);border:1px solid color-mix(in oklab,#fff 10%,transparent);
+      border-radius:16px;margin:10px}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
+    .sun{width:20px;height:20px;border:2px solid var(--aureolin);border-radius:50%;position:relative}
+    .sun:before,.sun:after{content:"";position:absolute;inset:-8px;background:conic-gradient(from 0deg,var(--aureolin) 0 2deg,transparent 2deg 30deg);
+      -webkit-mask:radial-gradient(circle 12px,transparent 12px,#000 12px);mask:radial-gradient(circle 12px,transparent 12px,#000 12px)}
+    .nav a.link{opacity:.85}.nav a.link:hover{opacity:1}
 
-    .showcase { grid-column: span 7; min-height: 340px; background: radial-gradient(600px 300px at 10% 0%, rgba(124,58,237,.25), transparent), linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); display: grid; place-items: center; }
-    .showcase pre { width: 100%; max-width: 640px; overflow: auto; background: #0c1117; color: #b9e0ff; border-radius: 14px; padding: 18px; border: 1px solid rgba(255,255,255,0.06); box-shadow: inset 0 0 0 1px rgba(255,255,255,.02); }
+    section{position:relative;min-height:100svh;display:grid;place-items:center;padding:64px 20px}
+    .inner{width:min(100%,var(--maxw));}.center{text-align:center}
 
-    .pricing { grid-column: span 5; display: grid; gap: 12px; }
-    .price-card { padding: 18px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); }
-    .price { font-size: 42px; font-weight: 800; letter-spacing: -0.02em; }
+    .hero{background:radial-gradient(1200px 700px at 50% -10%,color-mix(in oklab,var(--aureolin) 10%,transparent),transparent),var(--navy);overflow:hidden}
+    .title{font-size:clamp(42px,8vw,120px);line-height:.95;margin:0;font-weight:800;letter-spacing:-.01em}
+    .title .highlight{color:var(--aureolin)}
+    .subtitle{margin:16px 0 0;color:var(--muted);font-size:clamp(16px,2vw,22px)}
+    .cta{margin-top:28px;display:inline-flex;gap:10px}
+    .btn{padding:12px 20px;border-radius:999px;border:1px solid #333;background:#111;color:#fff;font-weight:700}
+    .btn--primary{background:var(--aureolin);color:#000;border-color:color-mix(in oklab,var(--aureolin) 40%,#000)}
+    .btn--outline{background:transparent;border-color:#333}
+    .particles{position:absolute;inset:0;pointer-events:none;opacity:.55}
+    .parallax{position:absolute;width:120%;left:-10%;top:40%;transform:translate3d(0,0,0);opacity:.06}
 
-    .contact { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
-    form { display: grid; gap: 12px; }
-    label { font-weight: 600; font-size: 14px; }
-    input, textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: #0b0f14; color: var(--text); outline: none; }
-    input:focus, textarea:focus { box-shadow: 0 0 0 4px var(--ring); border-color: rgba(124,58,237,.6); }
+    .colorband{--bg:var(--cream);background:var(--bg);color:#111}
+    .row{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw} @media (max-width:900px){.row{grid-template-columns:1fr;gap:28px}}
+    .swatches{display:flex;gap:12px;flex-wrap:wrap}
+    .chip{width:140px;aspect-ratio:4/3;border-radius:16px;display:grid;place-items:end;padding:10px;color:#111;font-weight:700}
+    .chip small{opacity:.8} .chip--a{background:var(--aureolin)} .chip--n{background:var(--navy);color:#fff} .chip--c{background:var(--cream)} .chip--r{background:var(--royal);color:#fff}
 
-    .footer { padding: 40px 0; color: #a3aab6; border-top: 1px solid rgba(255,255,255,.08); margin-top: 72px; }
+    .panels{display:grid;gap:12px}
+    .panel{border-radius:18px;padding:28px;min-height:46svh;background:#0f131a;border:1px solid #1b2230}
+    .panel h3{margin:0 0 12px} .panel p{color:#b9c0cc}
 
-    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px dashed rgba(255,255,255,.18); border-radius: 999px; color: #cbd5e1; font-size: 12px; }
-    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; padding: 2px 6px; border-radius: 6px; background: #0b0f14; border: 1px solid rgba(255,255,255,.14); }
+    .contact{background:linear-gradient(180deg,#0b0f14,#0b0f14 60%,#06080c)}
+    .footer{padding:40px 20px;color:#9aa1ad;text-align:center}
 
-    @media (max-width: 960px) {
-      .feature { grid-column: span 6; }
-      .showcase { grid-column: span 12; }
-      .pricing { grid-column: span 12; }
-      .contact { grid-template-columns: 1fr; }
-    }
+    @media (prefers-reduced-motion: reduce){ [data-anim]{opacity:1;transform:none !important} }
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="logo" href="#top" aria-label="Go to top">
-        <span class="logo-badge">TSG</span>
-        <span>tsgillenconnect</span>
-      </a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#docs">Docs</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact" class="cta">Contact</a>
+  <nav class="nav" aria-label="Primary">
+    <div class="bar">
+      <div class="brand"><span class="sun" aria-hidden="true"></span><strong>Aureolin</strong></div>
+      <div style="display:flex; gap:16px">
+        <a class="link" href="#color">Color</a>
+        <a class="link" href="#work">Work</a>
+        <a class="link" href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header id="top" class="hero container">
-    <span class="eyebrow">Launch-ready starter</span>
-    <h1>Build your site in an afternoon.<br/>Polish it over time.</h1>
-    <p>
-      A modern, responsive template with clean components and zero framework lock-in. Edit the text, swap images, and deploy. Later, migrate this into React/Next.js easily if you want.
-    </p>
-    <div class="hero-actions">
-      <a href="#docs" class="btn btn-primary">Get Started</a>
-      <a href="#features" class="btn btn-secondary">See Features</a>
-    </div>
-    <div class="marquee container" aria-hidden="true">
-      <div class="marquee-track">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Logo_of_GitHub.svg" alt="GitHub"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Netlify_logo_%282%29.svg" alt="Netlify"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Vercel_logo_2018.svg" alt="Vercel"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Firebase_Logo.svg" alt="Firebase"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Cloudflare_Logo.svg" alt="Cloudflare"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Logo_of_GitHub.svg" alt="GitHub"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Netlify_logo_%282%29.svg" alt="Netlify"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Vercel_logo_2018.svg" alt="Vercel"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Firebase_Logo.svg" alt="Firebase"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Cloudflare_Logo.svg" alt="Cloudflare"/>
-      </div>
-    </div>
-  </header>
-
-  <!-- FEATURES -->
-  <section id="features" class="section container">
-    <div class="grid">
-      <div class="card feature">
-        <span class="pill">No build step</span>
-        <h3>Drop-in simplicity</h3>
-        <p class="muted">Just one <code>index.html</code>. Edit text/images, then upload to your host. Add more pages as you go.</p>
-      </div>
-      <div class="card feature">
-        <span class="pill">Responsive</span>
-        <h3>Looks great everywhere</h3>
-        <p class="muted">Thoughtful spacing, adaptive grid, accessible colors. Mobile-first by default.</p>
-      </div>
-      <div class="card feature">
-        <span class="pill">Upgradeable</span>
-        <h3>Ready for frameworks</h3>
-        <p class="muted">When you’re ready, migrate this layout into React/Next/Vite without redesigning.</p>
-      </div>
-      <div class="card feature">
-        <span class="pill">Fast</span>
-        <h3>Lean, no bloat</h3>
-        <p class="muted">Zero dependencies. CSS is scoped, icons are SVGs, and animations are minimal.</p>
-      </div>
-      <div class="card feature">
-        <span class="pill">Customizable</span>
-        <h3>Change the vibe</h3>
-        <p class="muted">Swap colors in <code>:root</code>, edit radii/shadows, or bring your brand fonts.</p>
-      </div>
-      <div class="card feature">
-        <span class="pill">Practical</span>
-        <h3>Real sections</h3>
-        <p class="muted">Hero, features, code sample, pricing, contact form, and a clean footer.</p>
+  <section class="hero" id="home">
+    <canvas class="particles" id="dots" aria-hidden="true"></canvas>
+    <img class="parallax" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="" />
+    <div class="inner center">
+      <h1 class="title" data-anim>Golden <span class="highlight">Aureolin</span> Energy</h1>
+      <p class="subtitle" data-anim>We craft luminous identities and motion-rich web experiences powered by a radiant golden yellow.</p>
+      <div class="cta" data-anim>
+        <a class="btn btn--primary" href="#work">See Work</a>
+        <a class="btn btn--outline" href="#color">Color System</a>
       </div>
     </div>
   </section>
 
-  <!-- SHOWCASE + PRICING -->
-  <section id="docs" class="section container">
-    <div class="grid">
-      <div class="card showcase">
-        <pre><code>&lt;!-- Quick start --&gt;
-1) Open this file in VS Code.
-2) Edit text + colors in &lt;style&gt; :root.
-3) Replace the logo "KS" with your SVG/PNG.
-4) Duplicate this file for new pages (about, shop, etc.).
-5) Deploy free on Netlify or Vercel.
-
-// Add a new feature card
-&lt;div class="card feature"&gt;
-  &lt;span class="pill"&gt;New&lt;/span&gt;
-  &lt;h3&gt;My Feature&lt;/h3&gt;
-  &lt;p class="muted"&gt;Say what it does.&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-      </div>
-
-      <div id="pricing" class="pricing">
-        <div class="price-card">
-          <h3>Starter</h3>
-          <div class="muted">For personal sites</div>
-          <div class="price">Free</div>
-          <ul class="muted">
-            <li>Single page</li>
-            <li>Email link contact</li>
-            <li>Simple styles</li>
-          </ul>
-          <a class="btn btn-secondary" href="#contact">Use this</a>
-        </div>
-        <div class="price-card">
-          <h3>Pro</h3>
-          <div class="muted">For small brands</div>
-          <div class="price">$29</div>
-          <ul class="muted">
-            <li>Multi-page template</li>
-            <li>SEO + OpenGraph</li>
-            <li>Prebuilt components</li>
-          </ul>
-          <a class="btn btn-primary" href="#contact">Ask for Pro</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section container">
-    <div class="card contact">
+  <section class="colorband" id="color">
+    <div class="inner row">
       <div>
-        <h2>Contact</h2>
-        <p class="muted">This demo uses a mailto link by default. If you want a real form that submits without opening your email, you can hook this up to Netlify Forms, Basin, or a tiny serverless function later.</p>
-        <div style="margin-top: 12px;">
-          <a class="cta" href="mailto:tsgillenconnect@gmail.com?subject=Website%20Inquiry">📧 Email: tsgillenconnect@gmail.com</a>
+        <h2 style="color:#000; margin:0 0 10px">A palette with purpose</h2>
+        <p style="color:#222; max-width:65ch">
+          Aureolin <strong>#FDEE00</strong> leads. Deep Navy grounds, Cream breathes, and a precise Royal Blue accents.
+          Use Aureolin for focus and CTAs; rely on Navy/Cream for readability and rhythm.
+        </p>
+        <div class="swatches" style="margin-top:18px">
+          <div class="chip chip--a">#FDEE00 <small>Aureolin</small></div>
+          <div class="chip chip--n">#0B0F14 <small>Deep Navy</small></div>
+          <div class="chip chip--c">#F6F2E6 <small>Cream</small></div>
+          <div class="chip chip--r">#1B4AFF <small>Accent Royal</small></div>
         </div>
-        <p class="muted" style="margin-top: 16px;">Or send via the form →</p>
       </div>
-      <form id="contactForm" onsubmit="return handleSubmit(event)">
-        <div>
-          <label for="name">Name</label>
-          <input id="name" name="name" autocomplete="name" required />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-        </div>
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Send message</button>
-        <p id="formStatus" class="muted" role="status" aria-live="polite"></p>
-      </form>
+      <div class="panels">
+        <article class="panel"><h3>Motion as meaning</h3><p>Scroll reveals, soft parallax, and color wipes guide attention—never overwhelm it.</p></article>
+        <article class="panel"><h3>Accessible by default</h3><p>Contrast-safe pairings, prefers-reduced-motion support, keyboard-friendly controls.</p></article>
+      </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container" style="display:flex; justify-content:space-between; gap: 16px; flex-wrap: wrap;">
-      <div>© <span id="year"></span> tsgillenconnect. All rights reserved.</div>
-      <div class="muted">Built with a simple HTML/CSS/JS starter.</div>
+  <section id="work">
+    <div class="inner">
+      <h2 class="center" style="margin:0 0 30px">Selected chapters</h2>
+      <div class="panels">
+        <article class="panel" style="background:#11161f"><h3>Brand ignition</h3><p>From naming to system, we build identities that scale—from favicon to festival screen.</p></article>
+        <article class="panel" style="background:#0e1725"><h3>Interactive stories</h3><p>Scroll-based narratives with cinematic beats—clear, performant, delightful.</p></article>
+        <article class="panel" style="background:#0c1420"><h3>Design ops</h3><p>Tokens, components, and motion guidelines that keep teams fast and consistent.</p></article>
+      </div>
     </div>
-  </footer>
+  </section>
 
+  <section class="contact" id="contact">
+    <div class="inner center">
+      <h2 class="title" style="font-size:clamp(32px,6vw,64px); margin-bottom:12px">Make it <span class="highlight">shine</span></h2>
+      <p class="subtitle">hello@aureolin.net • Based on Earth, working worldwide</p>
+      <div class="cta" style="margin-top:18px">
+        <a class="btn btn--primary" href="mailto:hello@aureolin.net">Start a project</a>
+        <a class="btn btn--outline" href="#home">Back to top</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="y"></span> Aureolin. All rights reserved.</footer>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script>
-    // mobile-friendly smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const href = a.getAttribute('href');
-        if (href.length > 1) {
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
-          history.pushState(null, '', href);
-        }
-      });
-    });
-
-    // Contact form: validate and mock-send
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = Object.fromEntries(new FormData(form).entries());
-
-      // Very light validation
-      if (!data.email.includes('@')) {
-        setStatus('Please enter a valid email.');
-        return false;
-      }
-
-      // For now, open mail client as fallback
-      const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
-      window.location.href = `mailto:tsgillenconnect@gmail.com?subject=New%20Message&body=${body}`;
-      setStatus('Opening your email app…');
-      form.reset();
-      return false;
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(!reduce){
+      gsap.set('[data-anim]', {y:30, opacity:0});
+      gsap.to('[data-anim]', {y:0, opacity:1, duration:0.9, delay:0.1, stagger:0.12, ease:"power3.out"});
+      const img = document.querySelector('.parallax');
+      gsap.to(img, { yPercent:-18, ease:"none", scrollTrigger:{trigger:".hero", start:"top top", end:"bottom top", scrub:1}});
+      gsap.utils.toArray('.panel').forEach((el)=>{ gsap.from(el, {opacity:0, y:40, duration:0.8, ease:"power2.out", scrollTrigger:{trigger:el, start:"top 80%"}}); });
+      ScrollTrigger.create({ trigger:"#color", start:"top center", onEnter: ()=>document.body.style.background="var(--cream)", onLeaveBack: ()=>document.body.style.background="var(--navy)" });
     }
-
-    function setStatus(msg) {
-      const p = document.getElementById('formStatus');
-      p.textContent = msg;
-    }
-
-    // Year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function dots(){
+      const c=document.getElementById('dots'),ctx=c.getContext('2d');let w,h,dpr=Math.min(window.devicePixelRatio||1,2);const N=80,pts=[];
+      function resize(){w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
+      function spawn(){pts.length=0;for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+0.4,v:Math.random()*0.3+0.2});}
+      function step(){ctx.clearRect(0,0,w,h);ctx.fillStyle="rgba(253,238,0,0.5)";for(const p of pts){p.y-=p.v;if(p.y<-10){p.y=h+10;p.x=Math.random()*w;}ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();}requestAnimationFrame(step);}
+      resize();spawn();step();window.addEventListener('resize',()=>{resize();spawn();});
+    })();
   </script>
 </body>
 </html>
